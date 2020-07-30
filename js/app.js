@@ -3,10 +3,12 @@
  * app.js */
 const startButton = document.getElementById('btn__reset');
 
- class Game {
-     startButton.addEventListener('click', () => {
-     /***add click event listeners to onscreen keybd buttons
-    so that handleInteraction() is called on the game object
-    **/
+ const phrase = new Phrase();
+ const game = new Game();
+  // startButton.addEventListener('click', () => {
+     /***
+      * determine what goes here
      })
- }
+    **/
+
+    /**add event listeners to onscreen keyboard buttons */
