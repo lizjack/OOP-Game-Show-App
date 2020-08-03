@@ -5,7 +5,13 @@
  class Game {
      constructor() {
        this.missed = 0;
-       this.phrases = [];
+       this.phrases = [
+         new Phrase('Long ago the four nations lived in harmony'),
+         new Phrase('Im saying Id rather kiss you than die'),
+         new Phrase('I love Zuko more than I fear you'),
+         new Phrase('Hello Zuko here'),
+         new Phrase('Hawky hawk')
+       ];
        this.activePhrase = null;
      }
     startGame() {
@@ -27,13 +33,3 @@
 
     }
  }
-
- /*** Const ernie = { 
-	animal: ‘dog’,
-	age: 1,
-	breed: ‘pug’,
-bark: function(){
-console.log(‘woof!’);
-}
-}
- */
