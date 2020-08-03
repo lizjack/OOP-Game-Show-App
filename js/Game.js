@@ -4,14 +4,10 @@
 
  class Game {
      constructor() {
-       
+       this.missed = 0;
+       this.phrases = [];
+       this.activePhrase = null;
      }
-//initialize missed, phrases, activePhrases property
-//start and end the game
-//handle interactions
-//get a random phrase
-//check for a win
-//remove a life from scoreboard
     startGame() {
 
     }
@@ -31,3 +27,13 @@
 
     }
  }
+
+ /*** Const ernie = { 
+	animal: ‘dog’,
+	age: 1,
+	breed: ‘pug’,
+bark: function(){
+console.log(‘woof!’);
+}
+}
+ */

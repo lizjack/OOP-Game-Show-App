@@ -4,7 +4,7 @@
 
  class Phrase {
     constructor(phrase) {
-        this.phrase = phrase;
+        this.phrase = phrase.toLowerCase();
     }
     addPhraseToDisplay() {
 //adds placeholders to the display when the game starts, each letter
