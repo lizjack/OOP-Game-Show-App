@@ -18,7 +18,8 @@
 
     }
     getRandomPhrase() {
-
+      let randomNum = Math.floor(Math.random() * this.phrases.length);
+       return this.phrases[randomNum];       
     }
     handleInteraction() {
 
