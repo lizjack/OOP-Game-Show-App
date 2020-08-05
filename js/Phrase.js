@@ -7,8 +7,6 @@
         this.phrase = phrase.toLowerCase();
     }
     addPhraseToDisplay() {
-        const phraseList = document.querySelector(#phrase ul);
-        const letters = this.phrase.split;
     }
     checkLetter() {     
     }
