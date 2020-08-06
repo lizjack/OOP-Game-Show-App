@@ -10,6 +10,9 @@
      })
     **/
 
+    const game = new Game();
+    game.getRandomPhrase().addPhraseToDisplay();
+
     /**add click event listeners to onscreen keyboard buttons
      * and click event listener for start button
      */
