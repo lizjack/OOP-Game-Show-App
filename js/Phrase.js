@@ -11,7 +11,7 @@
         const phraseContainer = document.getElementById("phrase");
         const ul = phraseContainer.firstElementChild;
         // console.log(ul)
-        for(let i = 1; i < this.phrase.length; i += 1) {
+        for(let i = 0; i < this.phrase.length; i += 1) {
             //create list element to store phrase
             const letter = document.createElement("LI");
             //employ innerHTML to display letters and spaces in this.phrase
