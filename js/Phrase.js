@@ -7,19 +7,24 @@
         this.phrase = phrase.toLowerCase();
     }
     addPhraseToDisplay() {
-        const phraseSection = document.getElementById("phrase");
-        const ul = phraseSection.firstElementChild;
+        //create phraseContainer element and create element for the first element child, (ul)
+        const phraseContainer = document.getElementById("phrase");
+        const ul = phraseContainer.firstElementChild;
         // console.log(ul)
         for(let i = 1; i < this.phrase.length; i += 1) {
-            const phraseList = phraseSection.firstElementChild;
+            //create list element to store phrase
             const letter = document.createElement("LI");
-            letter.innerHTML = this.phrase[i]
+            //employ innerHTML to display letters and spaces in this.phrase
+            letter.innerHTML = this.phrase[i];
             console.log(letter)
+            //add letter class if character is not space
             if (letter.innerHTML !== ' ') {
                 letter.classList.add("letter");
+            //add space class if character is not a letter
             } else  {
                 letter.classList.add("space");
             }
+            //append the letter element to the ul
             ul.appendChild(letter);
         }
     }
@@ -29,6 +34,3 @@
     }
  }
 
- /** 
-
-**/
