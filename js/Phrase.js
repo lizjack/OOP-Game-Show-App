@@ -7,16 +7,20 @@
         this.phrase = phrase.toLowerCase();
     }
     addPhraseToDisplay() {
+        const phraseSection = document.getElementById("phrase");
+        const ul = phraseSection.firstElementChild;
+        // console.log(ul)
         for(let i = 1; i < this.phrase.length; i += 1) {
-            const phraseSection = document.getElementById("phrase");
             const phraseList = phraseSection.firstElementChild;
-            var list = document.createElement("LI");
-            if (this.phrase === /(a-z)/) {
-                Element.classList.add("letter");
-            } if (this.phrase === /(\s)/) {
-                Element.classList.add("space");
+            const letter = document.createElement("LI");
+            letter.innerHTML = this.phrase[i]
+            console.log(letter)
+            if (letter.innerHTML !== ' ') {
+                letter.classList.add("letter");
+            } else  {
+                letter.classList.add("space");
             }
-            phraseList.appendChild(list);
+            ul.appendChild(letter);
         }
     }
     checkLetter() {     
@@ -24,3 +28,7 @@
     showMatchedLetter() {     
     }
  }
+
+ /** 
+
+**/

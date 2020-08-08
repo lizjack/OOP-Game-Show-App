@@ -15,7 +15,11 @@
        this.activePhrase = null;
      }
     startGame() {
-
+      const overlay = document.getElementById('overlay');
+      overlay.style.display === 'none';
+      const randomPhrase = getRandomPhrase();
+      addPhraseToDisplay(randomPhrase);
+      this.activePhrase = this.phrase;
     }
     getRandomPhrase() {
       let randomNum = Math.floor(Math.random() * this.phrases.length);
