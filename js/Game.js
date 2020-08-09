@@ -31,10 +31,20 @@
 
     }
     removeLife() {
-
+      //create variable for live hearts
+      const hearts = document.querySelector(".tries img");
+     //consider making variable for user fails
+      //Check to add a lostHeart if user loses a life, adds to lost life tally
+      if (this.activePhrase.checkLetter(this.letter) === false) {
+        this.missed += 1;
+        hearts.src = 'images/lostHeart.png';
+      }
+      //if user loses 5 lives the game is over
+      if (this.missed >= 5) {
+        this.gameOver();
+      }
     }
     checkForWin() {
-
     }
     gameOver() {
 
