@@ -28,9 +28,15 @@
             ul.appendChild(letter);
         }
     }
-    checkLetter() {     
+    //Add letter parameter to check and see if parameter is included in the active phrase
+    checkLetter(letter) {    
+        if (this.phrase.includes(letter)) {
+            return true;
+        } else {
+            return false;
+        }
     }
-    showMatchedLetter() {     
+    showMatchedLetter() {    
     }
  }
 
