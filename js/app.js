@@ -11,7 +11,10 @@
     **/
 
     const game = new Game();
-    game.getRandomPhrase().addPhraseToDisplay();
+    game.startGame();
+    console.log( `Active Phrase - phrase: ${game.activePhrase.phrase}`);
+    
+    //game.getRandomPhrase().addPhraseToDisplay();
 
     /**add click event listeners to onscreen keyboard buttons
      * and click event listener for start button

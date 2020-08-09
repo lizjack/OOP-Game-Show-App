@@ -15,11 +15,13 @@
        this.activePhrase = null;
      }
     startGame() {
+       //create element for the overlay and hide overlay
       const overlay = document.getElementById('overlay');
-      overlay.style.display === 'none';
-      const randomPhrase = getRandomPhrase();
-      addPhraseToDisplay(randomPhrase);
-      this.activePhrase = this.phrase;
+      overlay.style.display = 'none';
+      //call the getRandomPhrase() to select a phrase object and set it to activePhrase
+      this.activePhrase = this.getRandomPhrase();
+      //Call the addPhraseToDisplay method on randomPhrase
+      this.activePhrase.addPhraseToDisplay();
     }
     getRandomPhrase() {
       let randomNum = Math.floor(Math.random() * this.phrases.length);
