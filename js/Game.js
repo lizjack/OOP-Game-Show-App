@@ -15,8 +15,8 @@
        this.activePhrase = null;
      }
     startGame() {
-       //create element for the overlay and hide overlay
-      const overlay = document.getElementById('overlay');
+    //create element for the overlay and hide overlay
+     const overlay = document.getElementById('overlay');
       overlay.style.display = 'none';
       //call the getRandomPhrase() to select a phrase object and set it to activePhrase
       this.activePhrase = this.getRandomPhrase();
@@ -46,7 +46,19 @@
     }
     checkForWin() {
     }
+    //add losing class
     gameOver() {
-
+      const overlay = document.getElementById('overlay');
+      const heading = document.getElementById('game-over-message');
+      overlay.style.display = '';
+      //if user loses display loss message and change css class
+      if (this.checkForWin(true)) {
+        heading.innerHTML = 'You ran out of lives. Thanks for playing!';
+        overlay.className = 'lose';
+      } else {
+        //display win message and change CSS class
+        heading.innerHTML = 'Congratulations, you won! Thanks for playing.';
+        overlay.className = 'win'; 
+      }
     }
  }
