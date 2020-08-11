@@ -37,6 +37,11 @@
         }
     }
     showMatchedLetter() {    
+        let letterChosen = document.querySelector('phrase ul')
+        for (let i = 0; i < letterChosen.length; i ++) {
+            if (this.activePhrase.checkLetter(letterChosen[i]) === true) {
+                letterChosen.style.display = 'block';
+            }
+        }
     }
  }
-

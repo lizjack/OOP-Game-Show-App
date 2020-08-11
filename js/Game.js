@@ -45,8 +45,8 @@
       }
     }
     checkForWin() {
+       //add losing class
     }
-    //add losing class
     gameOver() {
       const overlay = document.getElementById('overlay');
       const heading = document.getElementById('game-over-message');
