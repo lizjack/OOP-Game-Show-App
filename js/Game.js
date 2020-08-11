@@ -27,13 +27,27 @@
       let randomNum = Math.floor(Math.random() * this.phrases.length);
        return this.phrases[randomNum];       
     }
-    handleInteraction() {
-
+    handleInteraction(button) {
+        if (this.activePhrase.checkLetter(this.letter) === true) {
+          this.letter.style.display = 'block';
+          button.className = "win";
+          this.checkForWin();
+        } else {
+          this.removeLife();
+          }
+          if (this.activePhrase.checkLetter(this.letter) === false) {
+            this.removeLife();
+            this.className = "fail";
+          } if (this.checkForWin() === true)
+           {
+            this.gameOver();
+          }
+        }
     }
     removeLife() {
       //create variable for live hearts
       const hearts = document.querySelector(".tries img");
-     //consider making variable for user fails
+     //consider making variable for u)ser fails
       //Check to add a lostHeart if user loses a life, adds to lost life tally
       if (this.activePhrase.checkLetter(this.letter) === false) {
         this.missed += 1;
@@ -45,8 +59,14 @@
       }
     }
     checkForWin() {
-       //add losing class
-    }
+      /** if (
+         if (checkLetter === true) {
+           class = win
+         } else {
+           class = lose
+         }
+      )
+    } **/
     gameOver() {
       const overlay = document.getElementById('overlay');
       const heading = document.getElementById('game-over-message');
