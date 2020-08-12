@@ -28,14 +28,14 @@
        return this.phrases[randomNum];       
     }
     handleInteraction(button) {
-        if (this.activePhrase.checkLetter(this.letter) === true) {
-          this.letter.style.display = 'block';
+        if (this.activePhrase.checkLetter(button.innerHTML) === true) {
+          this.button.style.display = 'block';
           button.className = "win";
           this.checkForWin();
         } else {
           this.removeLife();
           }
-          if (this.activePhrase.checkLetter(this.letter) === false) {
+          if (this.activePhrase.checkLetter(button.innerHTML) === false) {
             this.removeLife();
             this.className = "fail";
           } if (this.checkForWin() === true)
@@ -58,15 +58,13 @@
         this.gameOver();
       }
     }
-    checkForWin() {
-      /** if (
-         if (checkLetter === true) {
+    /** checkForWin() {
+         if (this.activePhrase === ) {
            class = win
          } else {
            class = lose
          }
-      )
-    } **/
+      } **/
     gameOver() {
       const overlay = document.getElementById('overlay');
       const heading = document.getElementById('game-over-message');
