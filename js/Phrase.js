@@ -28,7 +28,7 @@
             ul.appendChild(letter);
         }
     }
-    //Add letter parameter to check and see if parameter is included in the active phrase
+    //Check to see if the letter is included in the active phrase
     checkLetter(letter) {    
         if (this.phrase.includes(letter)) {
             return true;
@@ -36,6 +36,7 @@
             return false;
         }
     }
+    //Use DOM manipulation to get letterChosen. If its included in the active phrase, the letter dispalys
     showMatchedLetter() {    
         let letterChosen = document.querySelector('phrase ul')
         for (let i = 0; i < letterChosen.length; i ++) {

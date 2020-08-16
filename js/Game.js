@@ -28,29 +28,27 @@
        return this.phrases[randomNum];       
     }
     handleInteraction(button) {
-        if (this.activePhrase.checkLetter(button.innerHTML) === true) {
+      if (this.activePhrase.checkLetter(button.innerHTML) === true) {
           this.button.style.display = 'block';
           button.className = "win";
           this.checkForWin();
-        } else {
-          this.removeLife();
-          }
-          if (this.activePhrase.checkLetter(button.innerHTML) === false) {
+        } 
+        if (this.activePhrase.checkLetter(button.innerHTML) === false) {
             this.removeLife();
             this.className = "fail";
+            //consider showing the corect letter
           } if (this.checkForWin() === true)
            {
             this.gameOver();
           }
         }
-    }
     removeLife() {
-      //create variable for live hearts
+      //create variable for lives displayed as hearts
       const hearts = document.querySelector(".tries img");
-     //consider making variable for u)ser fails
       //Check to add a lostHeart if user loses a life, adds to lost life tally
       if (this.activePhrase.checkLetter(this.letter) === false) {
         this.missed += 1;
+        //lost life displays on game display
         hearts.src = 'images/lostHeart.png';
       }
       //if user loses 5 lives the game is over
@@ -58,25 +56,29 @@
         this.gameOver();
       }
     }
-    /** checkForWin() {
-         if (this.activePhrase === ) {
-           class = win
+    checkForWin() {
+         if (this.activePhrase.style.display = 'block') {
+           win = true;
+           return win;
          } else {
-           class = lose
+           win = false;
+           return win;
          }
-      } **/
+      }
     gameOver() {
       const overlay = document.getElementById('overlay');
       const heading = document.getElementById('game-over-message');
       overlay.style.display = '';
-      //if user loses display loss message and change css class
+      //Win message is displayed if checkForWin is true
       if (this.checkForWin(true)) {
-        heading.innerHTML = 'You ran out of lives. Thanks for playing!';
-        overlay.className = 'lose';
-      } else {
-        //display win message and change CSS class
         heading.innerHTML = 'Congratulations, you won! Thanks for playing.';
-        overlay.className = 'win'; 
+        overlay.className = 'win';
+        overlay.style.display = 'block';
+      } else {
+        //Loss message is displayed if checkForWin is not true
+        heading.innerHTML = 'You ran out of lives. Thanks for playing!';
+        overlay.className = 'lose'; 
+        overlay.style.display = 'block';
       }
     }
- }
+  }
