@@ -56,6 +56,7 @@
       }
     }
     checkForWin() {
+      let win = false;
          if (this.activePhrase.style.display = 'block') {
            win = true;
            return win;
