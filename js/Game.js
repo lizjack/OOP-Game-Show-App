@@ -29,16 +29,15 @@
     }
     handleInteraction(button) {
       if (this.activePhrase.checkLetter(button.innerHTML) === true) {
-          this.button.style.display = 'block';
+        this.activePhrase.showMatchedLetter(button.innerHTML);
           button.className = "win";
           this.checkForWin();
         } 
         if (this.activePhrase.checkLetter(button.innerHTML) === false) {
             this.removeLife();
-            this.className = "fail";
-            //consider showing the corect letter
-          } if (this.checkForWin() === true)
-           {
+            button.className = "fail";
+            //(consider showing the corect letter)
+          } if (this.checkForWin() === true) {
             this.gameOver();
           }
         }
