@@ -65,7 +65,7 @@
            return win;
          }
       }
-    gameOver() {
+    gameOver(gameWon) {
       const overlay = document.getElementById('overlay');
       const heading = document.getElementById('game-over-message');
       overlay.style.display = '';
