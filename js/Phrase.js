@@ -42,7 +42,8 @@
         for (let i = 0; i < letters.length; i ++) {
             if (letters[i].className = "letter") {
                 letters[i].innerHTML = letters[i];
+                letters[i].className = "show";
             }
         }
     }
- }
+ }  

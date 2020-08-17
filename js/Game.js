@@ -42,13 +42,13 @@
         }
       }
        removeLife() {
-      //create variable for lives displayed as hearts
-      const hearts = document.querySelector("ol");
-      let tally = document.querySelector(".tries img");
-      let tries = document.querySelector(".tries");
+      //create variable for first lives displayed as hearts, tally, and tries
+      const tally = document.querySelector("ol");
+      let heart = document.querySelector(".tries img");
+     let tries = document.querySelector(".tries");
       //if the active phrase doesn't not have the letter being tested, lost heart displays
       if (this.activePhrase.checkLetter(this.letter) === false) {
-        tally.src = "images/lostHeart.png";
+        heart.src = "images/lostHeart.png";
         tries.className = "loss";
         this.missed +=1;
       }
@@ -57,29 +57,29 @@
         this.gameOver();
       }
     } 
-
-    checkForWin() {
+   checkForWin() {
       let win = false;
-         if (this.activePhrase.style.display = 'block') {
-           win = true;
+      win = document.getElementsByClassName("letter");
+         if (win.length > 0) {
+           win = false;
            return win;
          } else {
-           win = false;
+           win = true;
            return win;
          }
       }
     gameOver(gameWon) {
       const overlay = document.getElementById('overlay');
-      const heading = document.getElementById('game-over-message');
+      const gameOver = document.getElementById('game-over-message');
       overlay.style.display = '';
       //Win message is displayed if checkForWin is true
       if (this.checkForWin(true)) {
-        heading.innerHTML = 'Congratulations, you won! Thanks for playing.';
+        gameOver.innerHTML = 'Congratulations, you won! Thanks for playing.';
         overlay.className = 'win';
         overlay.style.display = 'block';
       } else {
         //Loss message is displayed if checkForWin is not true
-        heading.innerHTML = 'You ran out of lives. Thanks for playing!';
+        gameOver.innerHTML = 'You ran out of lives. Thanks for playing!';
         overlay.className = 'lose'; 
         overlay.style.display = 'block';
       }
