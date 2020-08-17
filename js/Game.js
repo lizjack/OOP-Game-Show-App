@@ -39,22 +39,25 @@
             //(consider showing the corect letter)
           } if (this.checkForWin() === true) {
             this.gameOver();
-          }
         }
-    removeLife() {
+      }
+       removeLife() {
       //create variable for lives displayed as hearts
-      const hearts = document.querySelector(".tries img");
-      //Check to add a lostHeart if user loses a life, adds to lost life tally
+      const hearts = document.querySelector("ol");
+      let tally = document.querySelector(".tries img");
+      let tries = document.querySelector(".tries");
+      //if the active phrase doesn't not have the letter being tested, lost heart displays
       if (this.activePhrase.checkLetter(this.letter) === false) {
-        this.missed += 1;
-        //lost life displays on game display
-        hearts.src = 'images/lostHeart.png';
+        tally.src = "images/lostHeart.png";
+        tries.className = "loss";
+        this.missed +=1;
       }
       //if user loses 5 lives the game is over
-      if (this.missed >= 5) {
+      if (this.missed === 5) {
         this.gameOver();
       }
-    }
+    } 
+
     checkForWin() {
       let win = false;
          if (this.activePhrase.style.display = 'block') {
