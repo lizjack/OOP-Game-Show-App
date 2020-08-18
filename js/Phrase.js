@@ -36,14 +36,12 @@
             return false;
         }
     }
-     //Use DOM manipulation to get letterChosen. If its included in the active phrase, the letter displays
     showMatchedLetter(letter) {    
         const letters = document.getElementsByClassName("letter");
         for (let i = 0; i < letters.length; i ++) {
-            if (letters[i].className = "letter") {
-                letters[i].innerHTML = letters[i];
-                letters[i].className = "show";
+            if (letters[i].textContent.toLowerCase() === letter.toLowerCase()) {//checks if element at index has a class of letter 
+                letters[i].className = "show";//changes class to show
             }
         }
-    } 
+     } 
  }  
