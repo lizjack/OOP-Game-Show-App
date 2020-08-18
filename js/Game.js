@@ -60,11 +60,13 @@
    checkForWin() {
       let win = false;
       win = document.getElementsByClassName("letter");
+      //check if the letters is greater than 0
          if (win.length > 0) {
+           //boolean returns false if letters is greater than 0
            win = false;
            return win;
          } else {
-           win = true;
+           win = true;//boolean returns true if user won
            return win;
          }
       }
