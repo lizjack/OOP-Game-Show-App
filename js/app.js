@@ -10,8 +10,9 @@ game.startGame();
 
  const keys = document.getElementsByClassName('key');
 keys.addEventListener('click', (event) => {
-  if (event.target.className === 'BUTTON') {
-  game.handleInteraction(keys);
+  for (let i = 0; i < keys.length; i ++) {
+    event.target.className === 'BUTTON';
+  game.handleInteraction(event);
   console.log(button);
   }
 });
