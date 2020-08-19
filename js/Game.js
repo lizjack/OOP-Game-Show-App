@@ -28,15 +28,17 @@
        return this.phrases[randomNum];       
     }
     handleInteraction(button) {
+      //checked the clicked letter against the phrase
       if (this.activePhrase.checkLetter(button.innerHTML) === true) {
+        //if it matches, show clicked letter on screen
         this.activePhrase.showMatchedLetter(button.innerHTML);
           button.className = "win";
-          this.checkForWin();
+          //this.checkForWin();
         } 
         if (this.activePhrase.checkLetter(button.innerHTML) === false) {
+          //if there's no match, remove a life
             this.removeLife();
             button.className = "fail";
-            //(consider showing the corect letter)
           } if (this.checkForWin() === true) {
             this.gameOver();
         }

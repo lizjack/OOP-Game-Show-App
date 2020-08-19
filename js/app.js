@@ -8,6 +8,14 @@ startButton.addEventListener('click', () => {
 game.startGame();
 });
 
+ const keys = document.getElementsByClassName('key');
+keys.addEventListener('click', (event) => {
+  if (event.target.className === 'BUTTON') {
+  game.handleInteraction(keys);
+  console.log(button);
+  }
+});
+
   // startButton.addEventListener('click', () => {
      /***
       * determine what goes here
