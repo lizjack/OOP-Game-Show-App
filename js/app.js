@@ -9,12 +9,11 @@ game.startGame();
 });
 
  const keys = document.getElementsByClassName('key');
-keys.addEventListener('click', (event) => {
-  for (let i = 0; i < keys.length; i ++) {
-    event.target.className === 'BUTTON';
-  game.handleInteraction(event);
+ for (let i = 0; i < keys.length; i ++) {
+    keys[i].addEventListener('click', (event) => {
+  game.handleInteraction(event.target);
   console.log(button);
-  }
+    }
 });
 
   // startButton.addEventListener('click', () => {
