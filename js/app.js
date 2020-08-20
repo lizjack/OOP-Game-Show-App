@@ -12,10 +12,9 @@ game.startGame();
  for (let i = 0; i < keys.length; i ++) {
     keys[i].addEventListener('click', (event) => {
   game.handleInteraction(event.target);
-  console.log(button);
-    }
-});
-
+  console.log(event.target);
+    });
+};
   // startButton.addEventListener('click', () => {
      /***
       * determine what goes here

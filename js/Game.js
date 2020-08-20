@@ -32,13 +32,15 @@
       if (this.activePhrase.checkLetter(button.innerHTML) === true) {
         //if it matches, show clicked letter on screen
         this.activePhrase.showMatchedLetter(button.innerHTML);
-          button.className = "win";
+          button.className = "chosen";
+          button.disabled = true;
           //this.checkForWin();
         } 
         if (this.activePhrase.checkLetter(button.innerHTML) === false) {
           //if there's no match, remove a life
             this.removeLife();
-            button.className = "fail";
+            button.className = "wrong";
+            button.disabled = true;
           } if (this.checkForWin() === true) {
             this.gameOver();
         }
