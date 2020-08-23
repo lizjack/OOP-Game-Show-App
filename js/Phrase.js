@@ -16,7 +16,6 @@
             const letter = document.createElement("LI");
             //employ innerHTML to display letters and spaces in this.phrase
             letter.innerHTML = this.phrase[i];
-            console.log(letter)
             //add letter class if character is not space
             if (letter.innerHTML !== ' ') {
                 letter.classList.add("letter");
@@ -40,7 +39,7 @@
         //find all letter elements
         const letters = document.querySelectorAll(".letter");
         for (let i = 0; i < letters.length; i ++) {//loop over letters and test against letter parameter
-            if (letters[i].innerHTML.toLowerCase() === letter.toLowerCase()) {//checks if element at index has a class of letter 
+            if (letters[i].innerHTML.toLowerCase() === letter.toLowerCase()) {
                 letters[i].className = "show";//changes class to show
             }
         }

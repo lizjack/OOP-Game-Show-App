@@ -2,6 +2,7 @@
  * Project 4 - OOP Game App
  * Game.js */
 
+ //create a game class and enacting the new phrase classes
  class Game {
      constructor() {
        this.missed = 0;
@@ -54,7 +55,7 @@
       const tally = document.querySelector("ol");
       let heart = document.querySelector(".tries img");
      let tries = document.querySelector(".tries");
-      //if the active phrase doesn't not have the letter being tested, lost heart displays
+      //if the active phrase doesn't not include the letter being tested, lost heart displays
       if (this.activePhrase.checkLetter(this.letter) === false) {
         heart.src = "images/lostHeart.png";
         tries.className = "loss";
@@ -89,14 +90,14 @@
        overlay.style.display = 'block';
        } else {
         //Loss message is displayed if checkForWin is not true
-        gameOver.innerHTML = 'You ran out of lives. But like Beyoncé says - "I dream it, I work hard, I grind until I own it". You can always try again!';
+        gameOver.innerHTML = 'Bummer, you ran out of lives. But like Beyoncé says - "I dream it, I work hard, I grind until I own it". You can always try again!';
         overlay.className = 'lose'; 
         overlay.style.display = 'block';
       }
     }
     newGame() {
       this.missed = 0;
-      //erases list from phrase ul, found method here: https://stackoverflow.com/questions/18795028/javascript-remove-li-without-removing-ul#:~:text=getElementById('myList')%3B%20element,But%2C%20this%20removes%20the%20ul.
+      //erases list from phrase ul
       const listId = document.querySelector("ul");
       listId.innerHTML = "";
       //loop through the chosen and wrong button classes to enable their use and change the class to 'key'
