@@ -11,6 +11,8 @@
          new Phrase('get in formation'),
          new Phrase('Houston rock it'),
          new Phrase('Love on top'),
+         new Phrase('who run the world'),
+         new Phrase('the beat got sicker')
        ];
        this.activePhrase = null;
      }
@@ -81,7 +83,7 @@
       overlay.style.display = '';
       //Win message is displayed if checkForWin is true
       if (this.checkForWin(true)) {
-        gameOver.innerHTML = 'Congratulations, you won. You\'re a star!';
+        gameOver.innerHTML = 'Congratulations, you won. You slay, you\'re a star!';
         overlay.className = 'win';
         overlay.style.display = 'block';
       } else {
