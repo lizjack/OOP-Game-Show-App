@@ -15,19 +15,3 @@ game.startGame();
   console.log(event.target);
     });
 };
-  // startButton.addEventListener('click', () => {
-     /***
-      * determine what goes here
-     })
-    **/
-
-    /** const game = new Game();
-    game.startGame();
-    console.log( `Active Phrase - phrase: ${game.activePhrase.phrase}`);
-    **/
-   
-    //game.getRandomPhrase().addPhraseToDisplay();
-
-    /**add click event listeners to onscreen keyboard buttons
-     * and click event listener for start button
-     */

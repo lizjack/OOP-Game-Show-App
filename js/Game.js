@@ -15,6 +15,7 @@
        this.activePhrase = null;
      }
     startGame() {
+      this.newGame();
     //create element for the overlay and hide overlay
      const overlay = document.getElementById('overlay');
       overlay.style.display = 'none';
@@ -80,14 +81,42 @@
       overlay.style.display = '';
       //Win message is displayed if checkForWin is true
       if (this.checkForWin(true)) {
-        gameOver.innerHTML = 'Congratulations, you won! Thanks for playing.';
+        gameOver.innerHTML = 'Congratulations, you won. You\'re a star!';
         overlay.className = 'win';
         overlay.style.display = 'block';
       } else {
         //Loss message is displayed if checkForWin is not true
-        gameOver.innerHTML = 'You ran out of lives. Thanks for playing!';
+        gameOver.innerHTML = 'You ran out of lives. But like Beyonce says - "I dream it, I work hard, I grind until I own it". You can always try again!';
         overlay.className = 'lose'; 
         overlay.style.display = 'block';
       }
     }
+    newGame() {
+      this.missed = 0;
+      //erases list from phrase ul, found method here: https://stackoverflow.com/questions/18795028/javascript-remove-li-without-removing-ul#:~:text=getElementById('myList')%3B%20element,But%2C%20this%20removes%20the%20ul.
+      const listId = document.querySelector("ul");
+      listId.innerHTML = "";
+      //loop through the chosen and wrong button classes to enable their use and change the class to 'key'
+      let chosenButtons = document.querySelectorAll(".chosen");
+      for (let i = 0; i < chosenButtons.length; i ++) {
+        chosenButtons[i].className = "key";
+        chosenButtons[i].disabled = false;
+      }
+      let wrongButtons = document.querySelectorAll(".wrong");
+      for (let i = 0; i < wrongButtons.length; i ++) {
+        wrongButtons[i].className = "key";
+        wrongButtons[i].disabled = false;
+      }
+      //reset number of tries
+      const resetLoss = document.querySelectorAll(".loss");
+      for (let i = 0; i < resetLoss.length; i ++) {
+        resetLoss[i].className = "tries";
+      }
+       //reset the heart images
+       const scoreReset = document.querySelectorAll(".tries img");
+       for (let i = 0; i < scoreReset.length; i ++) {
+         scoreReset[i].src = "images/liveHeart.png";
+       }
+    }
   }
+ 
