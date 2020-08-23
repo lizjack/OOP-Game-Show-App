@@ -37,16 +37,17 @@
         this.activePhrase.showMatchedLetter(button.innerHTML);
           button.className = "chosen";
           button.disabled = true;
-          //this.checkForWin();
+          //call checkForWin to determine if phrase is complete
+          if (this.checkForWin() === true) {
+            this.gameOver();
+          }
         } 
         if (this.activePhrase.checkLetter(button.innerHTML) === false) {
           //if there's no match, remove a life
             this.removeLife();
             button.className = "wrong";
             button.disabled = true;
-          } if (this.checkForWin() === true) {
-            this.gameOver();
-        }
+          }
       }
        removeLife() {
       //create variable for first lives displayed as hearts, tally, and tries
@@ -83,12 +84,12 @@
       overlay.style.display = '';
       //Win message is displayed if checkForWin is true
       if (this.checkForWin(true)) {
-        gameOver.innerHTML = 'Congratulations, you won. You slay, you\'re a star!';
-        overlay.className = 'win';
-        overlay.style.display = 'block';
-      } else {
+       gameOver.innerHTML = 'Congratulations, you won. You slay, you\'re a star!';
+       overlay.className = 'win';
+       overlay.style.display = 'block';
+       } else {
         //Loss message is displayed if checkForWin is not true
-        gameOver.innerHTML = 'You ran out of lives. But like Beyonce says - "I dream it, I work hard, I grind until I own it". You can always try again!';
+        gameOver.innerHTML = 'You ran out of lives. But like Beyoncé says - "I dream it, I work hard, I grind until I own it". You can always try again!';
         overlay.className = 'lose'; 
         overlay.style.display = 'block';
       }

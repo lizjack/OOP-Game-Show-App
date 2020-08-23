@@ -8,10 +8,23 @@ startButton.addEventListener('click', () => {
 game.startGame();
 });
 
- const keys = document.getElementsByClassName('key');
+const keys = document.getElementsByClassName('key');
  for (let i = 0; i < keys.length; i ++) {
-    keys[i].addEventListener('click', (event) => {
+    keys[i].addEventListener("click", (event) => {
   game.handleInteraction(event.target);
   console.log(event.target);
     });
-};
+}; 
+
+const overlay = document.getElementById("overlay");
+document.addEventListener('keydown', (e) => {
+  if (overlay.style.display === 'none') {
+      for (let i = 0; i < keys.length; i++) {
+          if (e.key === keys[i].textContent ) {
+              game.handleInteraction(keys[i])
+              keys[i].disabled = false;
+          }
+      }
+  }
+})
+

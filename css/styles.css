@@ -4,7 +4,7 @@
 /* Variables */
 
 :root {
-  --color-win: #78CF82;
+  --color-win: #E6E6FA;
   --color-lose: #D94545;
   --color-start: #5b85b7;
   --color-neutral: #445069;
@@ -20,7 +20,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Knockout', sans-serif;
 }
 
 body {
@@ -40,6 +40,7 @@ h2 {
   text-transform: uppercase;
   font-size: var(--font-size-large);
   margin: 0;
+  text-shadow: 2px 2px;
 }
 
 h1 {
@@ -48,7 +49,7 @@ h1 {
 
 button {
   margin: 6px;
-  border: 1px solid transparent;
+  border: 10px solid transparent;
   padding: .5rem 1rem;
   color: var(--color-keys);
   font-size: var(--font-size-medium);
@@ -166,7 +167,8 @@ button {
   display: flex;
   flex-direction: column;
   position: fixed;
-  color: #FFFFFF;
+
+  color: #000000;
   justify-content: center;
   top: 0;
   bottom: 0;
@@ -176,11 +178,14 @@ button {
 }
 
 .title {
-  color: #FFF;
+  color: #000000;
 }
 
 .start {
-  background-color: #3a3f58;
+  background-color: #add8e6;
+  background-image: url(../images/beyonce.png);
+  padding: 200px 100px;
+  margin 100px;
 }
 
 .start a {
@@ -189,6 +194,7 @@ button {
 
 .win {
   background-color: var(--color-win);
+  background-image: url(../images/beyoncewinner.png);
 }
 
 .win a {
@@ -196,7 +202,8 @@ button {
 }
 
 .lose {
-  background-color: #f5785f;
+  background-color: #FFB6C1;
+  background-image: url(../images/loser.png);
 }
 
 .lose a {
