@@ -38,9 +38,9 @@
     }
     showMatchedLetter(letter) {    
         //find all letter elements
-        const letters = document.getElementsByClassName("letter");
+        const letters = document.querySelectorAll(".letter");
         for (let i = 0; i < letters.length; i ++) {//loop over letters and test against letter parameter
-            if (letters[i].textContent.toLowerCase() === letter.toLowerCase()) {//checks if element at index has a class of letter 
+            if (letters[i].innerHTML.toLowerCase() === letter.toLowerCase()) {//checks if element at index has a class of letter 
                 letters[i].className = "show";//changes class to show
             }
         }

@@ -10,7 +10,7 @@
          new Phrase('Bring the beat in'),
          new Phrase('get in formation'),
          new Phrase('Houston rock it'),
-         new Phrase('Love on top')
+         new Phrase('Love on top'),
        ];
        this.activePhrase = null;
      }
