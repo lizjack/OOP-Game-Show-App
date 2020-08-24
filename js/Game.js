@@ -90,7 +90,7 @@
        overlay.style.display = 'block';
        } else {
         //Loss message is displayed if checkForWin is not true
-        gameOver.innerHTML = 'Bummer, you ran out of lives. But like Beyoncé says - "I dream it, I work hard, I grind until I own it". You can always try again!';
+        gameOver.innerHTML = 'Bummer, you ran out of lives. But like Beyoncé says - "I dream it, I work hard, I grind until I own it." You can always try again!';
         overlay.className = 'lose'; 
         overlay.style.display = 'block';
       }
