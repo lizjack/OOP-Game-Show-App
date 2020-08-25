@@ -209,3 +209,8 @@ button {
 .lose a {
   color: var(--color-lose);
 }
+.win #game-over-message,
+.lose #game-over-message {
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
